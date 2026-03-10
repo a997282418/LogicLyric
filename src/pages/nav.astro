@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    name: "常用工具",
+    icon: "🔧",
+    links: [
+      { name: "GitHub", url: "https://github.com", desc: "全球最大代码托管平台" },
+      { name: "Google", url: "https://google.com", desc: "全球最大搜索引擎" },
+      { name: "ChatGPT", url: "https://chat.openai.com", desc: "OpenAI 对话AI" },
+      { name: "Claude", url: "https://claude.ai", desc: "Anthropic AI助手" }
+    ]
+  },
+  {
+    name: "AI工具",
+    icon: "🤖",
+    links: [
+      { name: "Midjourney", url: "https://midjourney.com", desc: "AI绘画工具" },
+      { name: "Stable Diffusion", url: "https://stability.ai", desc: "开源AI绘画" },
+      { name: "Poe", url: "https://poe.com", desc: "多模型AI对话平台" },
+      { name: "Hugging Face", url: "https://huggingface.co", desc: "AI模型社区" }
+    ]
+  },
+  {
+    name: "开发资源",
+    icon: "💻",
+    links: [
+      { name: "Stack Overflow", url: "https://stackoverflow.com", desc: "程序员问答社区" },
+      { name: "MDN", url: "https://developer.mozilla.org", desc: "Web开发文档" },
+      { name: "NPM", url: "https://npmjs.com", desc: "Node包管理器" },
+      { name: "Can I Use", url: "https://caniuse.com", desc: "浏览器兼容性查询" }
+    ]
+  },
+  {
+    name: "学习资源",
+    icon: "📚",
+    links: [
+      { name: "掘金", url: "https://juejin.cn", desc: "中文技术社区" },
+      { name: "知乎", url: "https://zhihu.com", desc: "知识问答平台" },
+      { name: "B站", url: "https://bilibili.com", desc: "视频学习平台" },
+      { name: "Coursera", url: "https://coursera.org", desc: "在线课程平台" }
+    ]
+  },
+  {
+    name: "效率工具",
+    icon: "⚡",
+    links: [
+      { name: "Notion", url: "https://notion.so", desc: "全能笔记工具" },
+      { name: "Figma", url: "https://figma.com", desc: "在线设计工具" },
+      { name: "Excalidraw", url: "https://excalidraw.com", desc: "手绘风格白板" },
+      { name: "TinyPNG", url: "https://tinypng.com", desc: "图片压缩工具" }
+    ]
+  }
+];
+---
+
+<BaseLayout title="网址导航">
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif mb-4 text-center">🔗 网址导航</h1>
+    <p class="text-center text-secondary mb-12">收集优质网站，提升工作效率</p>
+    
+    <div class="space-y-12">
+      {categories.map(category => (
+        <section>
+          <h2 class="text-2xl font-serif mb-6 flex items-center gap-2">
+            <span>{category.icon}</span>
+            <span>{category.name}</span>
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {category.links.map(link => (
+              <a 
+                href={link.url}
+                target="_blank"
+                class="card group p-4 hover:border-accent/50 transition-all"
+              >
+                <h3 class="text-lg font-medium group-hover:text-accent transition-colors mb-2">
+                  {link.name}
+                </h3>
+                <p class="text-sm text-secondary">{link.desc}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="card mt-12 text-center">
+      <h2 class="text-2xl font-serif mb-4">📮 提交网站</h2>
+      <p class="text-secondary">发现好网站？欢迎在 GitHub 提交 Issue 推荐</p>
+    </div>
+  </main>
+</BaseLayout>
