@@ -3,18 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const friends = [
   {
-    name: "MareSera",
+    name: "LogicLyric",
     avatar: "https://www.maresera.top/img/tx.png",
-    url: "https://www.maresera.top/",
-    desc: "本模板的作者",
-    tags: ["作者"]
+    url: "https://github.com/MareSera/LogicLyric",
+    desc: "本博客使用的模板作者",
+    tags: ["模板作者"]
   }
 ];
 ---
 
 <BaseLayout title="友链">
   <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-serif mb-8">✨ 四海友邻</h1>
+    <h1 class="text-3xl font-serif mb-8">✨ 友情链接</h1>
     
     <div class="grid md:grid-cols-2 gap-6">
       {friends.map(friend => (
@@ -39,6 +39,11 @@ const friends = [
           </div>
         </a>
       ))}
+    </div>
+
+    <div class="card mt-8 text-center">
+      <h2 class="text-2xl font-serif mb-4">📮 申请友链</h2>
+      <p class="text-secondary">欢迎交换友链，请在 GitHub 提交 Issue 或 PR</p>
     </div>
   </main>
 </BaseLayout>

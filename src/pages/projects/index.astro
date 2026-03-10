@@ -3,11 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const projects = [
   {
-    name: "LogicLyric",
-    desc: "一个基于Astro的简洁好看好用的博客模板",
-    tech: ["Astro", "Tailwind", "TypeScript", "Vite"],
-    github: "https://github.com/MareSera/LogicLyric",
-    demo: "https://logiclyric.maresera.top/"
+    name: "个人博客",
+    desc: "基于 LogicLyric 模板搭建的个人博客，记录技术成长与生活点滴",
+    tech: ["Astro", "Tailwind", "TypeScript", "Vercel"],
+    github: "https://github.com/a997282418/LogicLyric",
+    demo: "https://logic-lyric-rho.vercel.app/"
   }
 ];
 ---
@@ -42,7 +42,7 @@ const projects = [
               onClick={(e) => e.stopPropagation()}
             >
               <i class="iconfont icon-external-r text-lg" />
-              <span>预览项目</span>
+              <span>在线预览</span>
             </a>
             <a 
               href={project.github}
